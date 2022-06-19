@@ -1,0 +1,60 @@
+#app {
+   background-color:bisque; 
+   display: flex;
+   flex-direction: column;
+   margin-left: 20%;
+   margin-right: 20%;
+   min-height: 50rem;
+   border-radius: 10%;
+   padding-top: 5%;
+}
+
+#todo-title,#todo-subtitle,#inputt,#output {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+#todo-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#todo-title h1 {
+    background-color: aquamarine;
+}
+
+#todo-subtitle {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#inputt input{
+    min-height: 3em;
+    width: 60%;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: white;
+    font-family: sans-serif;
+    text-align: justify;
+    font-size: 100%;
+    border-width: 0; 
+    padding: 10px;
+}
+#inputt input[type="text"]:focus {
+    outline: none;  
+    padding: 10px;
+}
+#todo-submit {
+    background-color: #055bbd;
+    color: white;
+    cursor: pointer;
+    min-height: 30px;
+    min-width: 60px;
+    border-width: 0;
+    border-radius: 10%;
+}
+#todo-output {
+    font-family: sans-serif;
+    width: 60%;
+    
+}

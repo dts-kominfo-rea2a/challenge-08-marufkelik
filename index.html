@@ -4,38 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" type="text/css">
     <title>Challenge - DOM</title>
   </head>
   <body>
     <div id="app">
       <!-- TODO: Buatlah sebuah header dengan id todo-title -->
+      <header id="todo-title"><h1>To Do List</h1></header>
       <!-- TODO: Buatlah sebuah subtitle dengan id todo-subtitle -->
+      <div id="todo-subtitle"><h2>-- Today I Need To --</h2></div>
 
       <!-- Section: input -->
+      <section id="inputt">
       <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
+      <input type="text" id="todo-input" >
       <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-
+      <button id="todo-submit">Tambah</button>
+      </section>
+      <section id="output">
       <!-- Section output -->
       <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
+        <ul id="todo-output">
+
+        </ul>
+      </section>
     </div>
 
     <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
     <script>
       // TODO: Deklarasi variable sesuai dengan kebutuhan di sini
-      let button;
-      let input;
-      let output;
+      let button= document.getElementById('todo-submit');
+      let input = document.getElementById('todo-input');
+      let output = document.getElementById('todo-output');
+      let kasks = ``;
 
       // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
       // Fungsi yang digunakan untuk menambahkan tulisan
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
-      function fnClickHandler(toDoItem) {}
+      function fnClickHandler(toDoItem) {
+        const AmbilIsian = input.value;
+        const ceklik = event.onclick;
+        const li = document.createElement('li');
+
+        if (event.type == "keypress") {
+          const keyCode = event.key;
+          if (keyCode === "Enter") {
+            li.innerHTML = AmbilIsian;
+            output.append(li);
+            input.value = ""; 
+            //console.log(event);
+          } else {}
+        
+
+        } else if (event.type == "click") {
+        li.innerHTML = AmbilIsian;
+        output.append(li);
+        input.value = "";
+        //console.log(event);
+        } 
+         
+      }
 
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
-      
+     button.addEventListener('click',fnClickHandler);
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
+      input.addEventListener('keypress',fnClickHandler);
     </script>
   </body>
 </html>
